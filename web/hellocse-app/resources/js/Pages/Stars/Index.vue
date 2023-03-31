@@ -2,7 +2,7 @@
     <AppLayout title="Dashboard">
       <template #header>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-          Liste des stars
+            Profile Browser
         </h2>
       </template>
       <div class="py-12 lg:flex lg:justify-center border">
