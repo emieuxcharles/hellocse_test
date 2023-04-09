@@ -11,7 +11,7 @@ Pour entrer dans le container web:
 
 Au sein du container:
 
-`cd hellocse-app`
+`cd hellocse-app`_
 `npm i`
 `npm run build`
 `php artisan migrate`
