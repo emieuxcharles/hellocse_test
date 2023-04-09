@@ -87,10 +87,27 @@ class StarController extends Controller
      * @param  \App\Models\Star  $star
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Star $star)
-    {
-        //
+    public function update(Request $request, Star $star) {
+        $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'description' => 'nullable|string',
+        ]);
+
+        $star->first_name = $request->input('first_name');
+        $star->last_name = $request->input('last_name');
+        $star->description = $request->input('description');
+        if ($request->file('image')) {
+            $imagePath = $request->file('image')->store('public/stars');
+            $star->image = $imagePath;
+        }
+
+        $star->save();
+
+        return redirect()->route('stars.index')->with('success', 'Star updated successfully.');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -98,8 +115,9 @@ class StarController extends Controller
      * @param  \App\Models\Star  $star
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Star $star)
-    {
-        //
+    public function destroy(Star $star) {
+        $star->delete();
+        return redirect()->route('stars.index')->with('success', 'Star deleted successfully.');
     }
+
 }

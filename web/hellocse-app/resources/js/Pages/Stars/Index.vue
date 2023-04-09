@@ -1,10 +1,13 @@
 <template>
     <AppLayout title="Dashboard">
       <template #header>
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Profile Browser
-        </h2>
-      </template>
+        <div class="flex justify-between">
+          <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+              Profile Browser
+            </h2>
+            <a href="/stars/create" class="ml-auto px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">Create Star</a>
+        </div>
+    </template>
       <div class="py-12 lg:flex lg:justify-center border">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 lg:flex lg:space-x-4">
           <div class="w-full lg:w-1/2 rounded-lg lg:rounded-l-lg overflow-hidden">
