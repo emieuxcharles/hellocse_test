@@ -12,8 +12,8 @@ Pour entrer dans le container web:
 Au sein du container:
 
 `cd hellocse-app` <br />
-`npm i`
-`npm run build`
-`php artisan migrate`
-`mkdir -p public/storage/stars `
-`php artisan db:seed`
+`npm i` <br />
+`npm run build` <br />
+`php artisan migrate` <br />
+`mkdir -p public/storage/stars ` <br />
+`php artisan db:seed` <br />
